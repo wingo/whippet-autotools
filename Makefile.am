@@ -1,5 +1,5 @@
 noinst_LTLIBRARIES =
-WHIPPET_EMBEDDER_CPPFLAGS = -include $(srcdir)/whippet/benchmarks/mt-gcbench-embedder.h
+WHIPPET_EMBEDDER_H = $(srcdir)/whippet/benchmarks/mt-gcbench-embedder.h
 include whippet/embed.am
 
 noinst_PROGRAMS = whippet/benchmarks/mt-gcbench
@@ -14,5 +14,6 @@ whippet_benchmarks_mt_gcbench_SOURCES = \
   whippet/benchmarks/heap-objects.h \
   whippet/benchmarks/mt-gcbench-embedder.h
 
-AM_CFLAGS = $(WHIPPET_CPPFLAGS) $(WHIPPET_CFLAGS) $(WHIPPET_TO_EMBEDDER_CPPFLAGS)
+AM_CPPFLAGS = $(WHIPPET_CPPFLAGS)
+AM_CFLAGS = $(WHIPPET_CFLAGS)
 LDADD = libwhippet.la
